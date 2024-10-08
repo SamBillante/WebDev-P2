@@ -1,12 +1,8 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>Bin - A Rubbish Search Engine</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton+SC&display=swap" rel="stylesheet">
+    <title>Bin</title>
 
     <link rel="stylesheet" href="./css/site.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous"></script>
@@ -16,22 +12,13 @@
 </head>
 
 <body>
-    <div>
-        <div align="center" ">
-            <h1 id="engineName" class="bigText">BIN</h1>
-        </div>
-        <div align="center">
-            <input id="query" class="searchBar" placeholder="Bin wantin' to know something?">
-        </div>
-        <div align="center">
-            <input id="search" type="submit" value="Search">
-            <input id="clock" type="submit" value="time">
-            <input id="lucky" type="submit" value="I'm Feeling Lucky">
-        </div>
-        <div id="searchResults"></div>
-        <div id="time"></div>
-    </div>
-    
+
+    <h1 name="engineName">BIN</h1>
+    <input id="query" placeholder="Bin wantin' to know something?">
+    <input id="search" type="submit" value="Search">
+    <input id="clock" type="submit" value="time">
+    <div id="searchResults"></div>
+    <div id="time"></div>
 
     <script type="text/javascript" src="./script.js"></script>
 

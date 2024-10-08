@@ -1,3 +1,5 @@
+var backgroundImageFlag = true;
+
 function apiSearch() {
     var params = {
         'q': $('#query').val(),
@@ -35,16 +37,42 @@ $("#search").click(function () {
 });
 
 $("#engineName").click(function () {
-    console.log("change background image");
+    if (backgroundImageFlag) $("body").css("background-image", "url(https://thumbs.dreamstime.com/b/recycling-bin-16128872.jpg)");
+    else $("body").css("background-image", "url(https://freepngimg.com/download/aquarium/43953-3-waste-basket-images-free-hd-image.png)");
+    backgroundImageFlag = !backgroundImageFlag;
 });
 
 $("#clock").click(function () {
     var now = new Date();
     var hour = now.getHours();
     var minutes = now.getMinutes();
+    if (minutes < 10) minutes = "0" + minutes.toString(); //this is cursed
     let readableTime = hour + ":" + minutes;
     //console.log("Hey, the clock function ran");
     $("#time").html(readableTime);
     $("#time").dialog();
     $("#time").css("visibility", "visible");
+});
+
+$("#lucky").click(function () {
+    var params = {
+        'q': $('#query').val(),
+        'count': 1,
+        'offset': 0,
+        'mkt': 'en-us'
+    };
+
+    $.ajax({
+        url: 'https://api.bing.microsoft.com/v7.0/search?' + $.param(params),
+        type: 'GET',
+        headers: {
+            'Ocp-Apim-Subscription-Key': 'aeb04dc4c27f41418e537b63ffece7e8'
+        }
+    })
+        .done(function (data) {
+            window.open(data.webPages.value[0].url, '_blank').focus();
+        })
+        .fail(function () {
+            alert('error');
+        });
 });

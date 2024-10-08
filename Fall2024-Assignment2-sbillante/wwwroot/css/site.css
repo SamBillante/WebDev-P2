@@ -24,6 +24,20 @@ body {
     background-position: center;
 }
 
+.searchBar {
+    padding: 5px 5px 5px 5px;
+    border-radius: 5px;
+    font-size: 22px;
+    border: 1px solid grey;
+    width: 320px;
+}
+
+.bigText {
+    font-size: 60px;
+}
+
+
+
 #searchResults {
     visibility: hidden;
 }
